@@ -39,9 +39,9 @@ export const Navigation = () => {
               {item.label}
             </a>
           ))}
-          <Button variant="secondary" size="sm">
+          {/* <Button variant="secondary" size="sm">
             DONATE
-          </Button>
+          </Button> */}
         </div>
 
         {/* Mobile Navigation */}
@@ -67,9 +67,9 @@ export const Navigation = () => {
                   {item.label}
                 </a>
               ))}
-              <Button variant="secondary" className="w-full">
+              {/* <Button variant="secondary" className="w-full">
                 DONATE
-              </Button>
+              </Button> */}
             </div>
           </SheetContent>
         </Sheet>
