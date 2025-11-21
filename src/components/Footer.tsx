@@ -30,7 +30,7 @@ export const Footer = () => {
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li className="flex items-start gap-2">
                 <span className="font-semibold text-foreground">Address:</span>
-                <span>123 Faith Street, Holy City, HC 12345</span>
+                <span>Sree Ram Nagar 2nd Lane, Guntur - 522004</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="font-semibold text-foreground">Email:</span>
