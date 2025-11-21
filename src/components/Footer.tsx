@@ -1,4 +1,4 @@
-import { Flame } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 export const Footer = () => {
   return (
@@ -7,8 +7,8 @@ export const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8">
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-full border-2 border-primary flex items-center justify-center">
-                <Flame className="w-4 h-4 text-primary" />
+              <div className="w-10 h-10 rounded-full flex items-center justify-center">
+                <img src={logo} alt="Eternal Destiny Ministries" className="text-primary" />
               </div>
               <span className="font-bold">ETERNAL DESTINY MINISTRIES</span>
             </div>
@@ -22,7 +22,6 @@ export const Footer = () => {
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li><a href="#about" className="hover:text-foreground transition-colors">About Us</a></li>
               <li><a href="#events" className="hover:text-foreground transition-colors">Events</a></li>
-              <li><a href="#team" className="hover:text-foreground transition-colors">Our Team</a></li>
             </ul>
           </div>
           
@@ -35,20 +34,17 @@ export const Footer = () => {
               </li>
               <li className="flex items-start gap-2">
                 <span className="font-semibold text-foreground">Email:</span>
-                <a href="mailto:info@thealtarchurch.org" className="hover:text-foreground transition-colors">
-                  info@thealtarchurch.org
+                <p><a href="mailto:revdscfinney@gmail.com" className="hover:text-foreground transition-colors">
+                  revdscfinney@gmail.com
+                </a><br></br><a href="mailto:eternaldestinyministries2025@gmail.com" className="hover:text-foreground transition-colors">
+                  eternaldestinyministries2025@gmail.com
                 </a>
+                </p>
               </li>
               <li className="flex items-start gap-2">
                 <span className="font-semibold text-foreground">Phone:</span>
-                <a href="tel:+1234567890" className="hover:text-foreground transition-colors">
-                  +1 (234) 567-890
-                </a>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="font-semibold text-foreground">Office:</span>
-                <a href="tel:+1234567891" className="hover:text-foreground transition-colors">
-                  +1 (234) 567-891
+                <a href="tel:+919441752596" className="hover:text-foreground transition-colors">
+                  +91 94417 52596
                 </a>
               </li>
             </ul>
