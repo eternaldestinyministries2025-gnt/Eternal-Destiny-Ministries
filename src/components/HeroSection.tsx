@@ -1,52 +1,102 @@
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-worship.jpg";
 import priestPhoto from "@/assets/priest-photo.jpg";
+
+// Background Images
+import slide1 from "@/assets/hero-carousel/slide1.jpg";
+import slide2 from "@/assets/hero-carousel/slide2.jpg";
+import slide3 from "@/assets/hero-carousel/slide3.jpg";
+import slide4 from "@/assets/hero-carousel/slide4.jpg";
+import slide5 from "@/assets/hero-carousel/slide5.jpg";
+
+// Carousel Imports
+import Autoplay from "embla-carousel-autoplay";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
+
+const heroSlides = [slide1, slide2, slide3, slide4, slide5];
 
 export const HeroSection = () => {
   return (
-    <section className="relative h-screen min-h-[600px] flex items-center pt-20">
-      <div 
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${heroImage})` }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
-      </div>
+    <section id="home" className="relative min-h-screen flex items-center pt-20 md:pt-24 pb-12">
       
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="grid md:grid-cols-2 gap-8 items-center">
-          <div className="space-y-6">
-            <h1 className="text-5xl md:text-6xl font-bold leading-tight">
-              Welcome to<br />ETERNAL DESTINY MINISTRIES
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-xl">
-              A Jesus-centered community of believers
-            </p>
-            
-            <div className="flex items-center gap-4 bg-card/80 backdrop-blur-md p-6 rounded-lg border border-border">
-              <img 
-                src={priestPhoto} 
-                alt="Senior Pastor" 
-                className="w-20 h-20 rounded-full object-cover border-2 border-primary"
-              />
-              <div>
-                <h3 className="font-bold text-lg">Rev. Dr. John Samuel</h3>
-                <p className="text-sm text-muted-foreground">Senior Pastor</p>
-                <p className="text-xs text-muted-foreground mt-1">Leading with faith and compassion since 1995</p>
+      {/* Background Carousel */}
+      <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
+        <Carousel
+          opts={{ loop: true }}
+          plugins={[Autoplay({ delay: 5000 })]}
+          className="w-full h-full"
+        >
+          <CarouselContent className="h-full">
+            {heroSlides.map((img, i) => (
+              <CarouselItem key={i} className="relative w-full h-full">
+                <img
+                  src={img}
+                  alt={`Hero Slide ${i + 1}`}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/80" />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
+      </div>
+
+      {/* Foreground Content (UNCHANGED) */}
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+
+            {/* Left Column */}
+            <div className="flex flex-col items-center lg:items-start space-y-6">
+              <div className="relative group">
+                <div className="absolute -inset-1 bg-gradient-to-r from-accent to-primary rounded-full blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
+                <img 
+                  src={priestPhoto} 
+                  alt="Senior Pastor BISHOP DR VIJAYA BHASKAR FINNEY DEVARAKONDA" 
+                  className="relative w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-full object-cover border-4 border-card shadow-2xl"
+                />
+              </div>
+              
+              <div className="text-center lg:text-left space-y-2">
+                <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold">
+                  <i>Bishop</i> Dr. Vijaya Bhaskar Finney Devarakonda
+                </h3>
+                <p className="text-lg md:text-xl text-accent font-semibold">Senior Pastor</p>
+                <p className="text-sm md:text-base text-muted-foreground max-w-md">
+                  Leading with faith and compassion, guiding our community in spiritual growth and service
+                </p>
               </div>
             </div>
-          </div>
-          
-          <div className="bg-card/80 backdrop-blur-md p-8 rounded-lg border border-border max-w-md ml-auto">
-            <h2 className="text-2xl font-bold mb-4">ABOUT US</h2>
-            <p className="text-muted-foreground mb-6">
-              We are a Jesus-centered community of believers who exist to steward the{" "}
-              <span className="italic text-foreground">fire</span> of revival in the context of{" "}
-              <span className="italic text-foreground">family</span> with the oversight of{" "}
-              <span className="italic text-foreground">fathering</span>.
-            </p>
-            <Button variant="outline" className="w-full">
-              LEARN MORE!
-            </Button>
+
+            {/* Right Column */}
+            <div className="space-y-6 lg:space-y-8">
+              <div className="space-y-4">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
+                  Welcome to<br />
+                  <span className="text-accent">ETERNAL DESTINY MINISTRIES</span>
+                </h1>
+                <p className="text-xl md:text-2xl text-muted-foreground">
+                  A Jesus-centered community of believers
+                </p>
+              </div>
+              
+              <div className="bg-card/90 backdrop-blur-md p-6 md:p-8 rounded-lg border border-border shadow-xl">
+                <h2 className="text-2xl md:text-3xl font-bold mb-4 text-accent">ABOUT US</h2>
+                <p className="text-base md:text-lg text-muted-foreground mb-6 leading-relaxed">
+                  We are a Jesus-centered community of believers who exist to steward the{" "}
+                  <span className="italic text-foreground font-semibold">fire</span> of revival in the context of{" "}
+                  <span className="italic text-foreground font-semibold">family</span> with the oversight of{" "}
+                  <span className="italic text-foreground font-semibold">fathering</span>.
+                </p>
+                <Button variant="default" size="lg" className="w-full md:w-auto">
+                  LEARN MORE
+                </Button>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
